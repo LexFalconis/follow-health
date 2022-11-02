@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Pressure{% endblock %}
+
+{% block body %}
+    <h1>Create new Pressure</h1>
+
+    {{ include('pressure/_form.html.twig') }}
+
+    <a href="{{ path('app_pressure_index') }}">back to list</a>
+{% endblock %}

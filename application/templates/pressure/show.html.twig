@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pressure{% endblock %}
+
+{% block body %}
+    <h1>Pressure</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pressure.id }}</td>
+            </tr>
+            <tr>
+                <th>Systolic</th>
+                <td>{{ pressure.Systolic }}</td>
+            </tr>
+            <tr>
+                <th>Diastolic</th>
+                <td>{{ pressure.Diastolic }}</td>
+            </tr>
+            <tr>
+                <th>Pulse</th>
+                <td>{{ pressure.Pulse }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ pressure.date ? pressure.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_pressure_index') }}">back to list</a>
+
+    <a href="{{ path('app_pressure_edit', {'id': pressure.id}) }}">edit</a>
+
+    {{ include('pressure/_delete_form.html.twig') }}
+{% endblock %}

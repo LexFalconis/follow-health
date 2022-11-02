@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Pressure{% endblock %}
+
+{% block body %}
+    <h1>Edit Pressure</h1>
+
+    {{ include('pressure/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_pressure_index') }}">back to list</a>
+
+    {{ include('pressure/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SatisfactionWithFood index{% endblock %}
+
+{% block body %}
+    <h1>SatisfactionWithFood index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for satisfaction_with_food in satisfaction_with_foods %}
+            <tr>
+                <td>{{ satisfaction_with_food.id }}</td>
+                <td>{{ satisfaction_with_food.description }}</td>
+                <td>{{ satisfaction_with_food.status }}</td>
+                <td>
+                    <a href="{{ path('app_satisfaction_with_food_show', {'id': satisfaction_with_food.id}) }}">show</a>
+                    <a href="{{ path('app_satisfaction_with_food_edit', {'id': satisfaction_with_food.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_satisfaction_with_food_new') }}">Create new</a>
+{% endblock %}

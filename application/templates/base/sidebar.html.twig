@@ -1,0 +1,83 @@
+{% block sidebar %}
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/">
+                        <span data-feather="home"></span>
+                        Home <span class="sr-only"></span>
+                    </a>
+                </li>
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link dropdown-toggle" href="#"#}
+{#                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+{#                        <span data-feather="file"></span>#}
+{#                        Orders#}
+{#                    </a>#}
+{#                    <div class="dropdown-menu">#}
+{#                        <a class="dropdown-item" href="#">Action</a>#}
+{#                        <a class="dropdown-item" href="#">Another action</a>#}
+{#                        <a class="dropdown-item" href="#">Something else here</a>#}
+{#                    </div>#}
+{#                </li>#}
+                <li class="nav-item">
+                    <a class="nav-link" href="/user">
+                        <span data-feather="layers"></span>
+                        Usuários
+                    </a>
+                </li>
+            </ul>
+
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                <span>Admin</span>
+                <a class="d-flex align-items-center text-muted" href="#">
+                    <span data-feather="plus-circle"></span>
+                </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+                <li class="nav-item">
+                    <a class="nav-link" href="/user">
+                        <span data-feather="layers"></span>
+                        Usuários
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/type-of-meal">
+                        <span data-feather="layers"></span>
+                        Tipo de refeição
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/satisfaction-with-food">
+                        <span data-feather="layers"></span>
+                        Nível de satisfação com o alimento
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/food-diary">
+                        <span data-feather="layers"></span>
+                        Diário alimentar
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/pressure">
+                        <span data-feather="layers"></span>
+                        Pressão arterial
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/diabetes">
+                        <span data-feather="layers"></span>
+                        Diábetes
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <span data-feather="file-text"></span>
+                        Year-end sale
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+{% endblock %}

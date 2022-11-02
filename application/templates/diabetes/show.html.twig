@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Diabetes{% endblock %}
+
+{% block body %}
+    <h1>Diabetes</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ diabetes.id }}</td>
+            </tr>
+            <tr>
+                <th>MeasurementDate</th>
+                <td>{{ diabetes.MeasurementDate ? diabetes.MeasurementDate|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>BloodGlucose</th>
+                <td>{{ diabetes.BloodGlucose }}</td>
+            </tr>
+            <tr>
+                <th>MeasurementRangeHour</th>
+                <td>{{ diabetes.MeasurementRangeHour }}</td>
+            </tr>
+            <tr>
+                <th>MeasurementRangeMinute</th>
+                <td>{{ diabetes.MeasurementRangeMinute }}</td>
+            </tr>
+            <tr>
+                <th>Note</th>
+                <td>{{ diabetes.Note }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_diabetes_index') }}">back to list</a>
+
+    <a href="{{ path('app_diabetes_edit', {'id': diabetes.id}) }}">edit</a>
+
+    {{ include('diabetes/_delete_form.html.twig') }}
+{% endblock %}

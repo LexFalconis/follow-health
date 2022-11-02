@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Diabetes index{% endblock %}
+
+{% block body %}
+    <h1>Diabetes index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>MeasurementDate</th>
+                <th>BloodGlucose</th>
+                <th>MeasurementRangeHour</th>
+                <th>MeasurementRangeMinute</th>
+                <th>Note</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for diabetes in diabetes %}
+            <tr>
+                <td>{{ diabetes.id }}</td>
+                <td>{{ diabetes.MeasurementDate ? diabetes.MeasurementDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ diabetes.BloodGlucose }}</td>
+                <td>{{ diabetes.MeasurementRangeHour }}</td>
+                <td>{{ diabetes.MeasurementRangeMinute }}</td>
+                <td>{{ diabetes.Note }}</td>
+                <td>
+                    <a href="{{ path('app_diabetes_show', {'id': diabetes.id}) }}">show</a>
+                    <a href="{{ path('app_diabetes_edit', {'id': diabetes.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_diabetes_new') }}">Create new</a>
+{% endblock %}

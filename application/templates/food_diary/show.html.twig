@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}FoodDiary{% endblock %}
+
+{% block body %}
+    <h1>FoodDiary</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ food_diary.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ food_diary.date ? food_diary.date|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>TimeWokeUp</th>
+                <td>{{ food_diary.TimeWokeUp ? food_diary.TimeWokeUp|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>MealTime</th>
+                <td>{{ food_diary.MealTime ? food_diary.MealTime|date('H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>MealDescription</th>
+                <td>{{ food_diary.MealDescription }}</td>
+            </tr>
+            <tr>
+                <th>WhereWas</th>
+                <td>{{ food_diary.WhereWas }}</td>
+            </tr>
+            <tr>
+                <th>WithWhom</th>
+                <td>{{ food_diary.WithWhom }}</td>
+            </tr>
+            <tr>
+                <th>HungerLevel</th>
+                <td>{{ food_diary.HungerLevel }}</td>
+            </tr>
+            <tr>
+                <th>PostMealSatietyLevel</th>
+                <td>{{ food_diary.PostMealSatietyLevel }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_food_diary_index') }}">back to list</a>
+
+    <a href="{{ path('app_food_diary_edit', {'id': food_diary.id}) }}">edit</a>
+
+    {{ include('food_diary/_delete_form.html.twig') }}
+{% endblock %}

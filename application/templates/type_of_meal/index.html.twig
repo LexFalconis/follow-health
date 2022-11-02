@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}TypeOfMeal index{% endblock %}
+
+{% block body %}
+    <h1>TypeOfMeal index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Description</th>
+                <th>Status</th>
+                <th>DisplayOrder</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for type_of_meal in type_of_meals %}
+            <tr>
+                <td>{{ type_of_meal.id }}</td>
+                <td>{{ type_of_meal.description }}</td>
+                <td>{{ type_of_meal.status ? 'Yes' : 'No' }}</td>
+                <td>{{ type_of_meal.displayOrder }}</td>
+                <td>
+                    <a href="{{ path('app_type_of_meal_show', {'id': type_of_meal.id}) }}">show</a>
+                    <a href="{{ path('app_type_of_meal_edit', {'id': type_of_meal.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_type_of_meal_new') }}">Create new</a>
+{% endblock %}
