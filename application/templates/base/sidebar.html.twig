@@ -5,7 +5,7 @@
                 <li class="nav-item">
                     <a class="nav-link active" href="/">
                         <span data-feather="home"></span>
-                        Home <span class="sr-only"></span>
+                        {{ "home"|trans|capitalize }} <span class="sr-only"></span>
                     </a>
                 </li>
 {#                <li class="nav-item">#}
@@ -23,7 +23,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/user">
                         <span data-feather="layers"></span>
-                        Usuários
+                        {{ "user.usuario"|trans|capitalize }}
                     </a>
                 </li>
             </ul>
@@ -38,43 +38,37 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/user">
                         <span data-feather="layers"></span>
-                        Usuários
+                        {{ "user.usuario"|trans|capitalize }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/type-of-meal">
                         <span data-feather="layers"></span>
-                        Tipo de refeição
+                        {{ "typeOfMeal.tipoRefeicao"|trans|capitalize }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/satisfaction-with-food">
                         <span data-feather="layers"></span>
-                        Nível de satisfação com o alimento
+                        {{ "satisfactionWithFood.nivelSatisfacaoAlimento"|trans|capitalize }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/food-diary">
                         <span data-feather="layers"></span>
-                        Diário alimentar
+                        {{ "foodDiary.diarioAlimentar"|trans|capitalize }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/pressure">
                         <span data-feather="layers"></span>
-                        Pressão arterial
+                        {{ "pressure.pressaoArterial"|trans|capitalize }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/diabetes">
                         <span data-feather="layers"></span>
-                        Diábetes
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        <span data-feather="file-text"></span>
-                        Year-end sale
+                        {{ "diabetes.diabetes"|trans|capitalize }}
                     </a>
                 </li>
             </ul>
